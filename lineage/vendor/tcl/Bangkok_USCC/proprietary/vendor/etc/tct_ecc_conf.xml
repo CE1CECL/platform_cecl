@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- Type Define:(Refer to TctEccConfig.java)
+     ECC = 0; NON_ECC = 1; RIL_ONLY = 2; EMPTY = 3; -->
+
+<TctEccEntry>
+    <!-- Defect: 8390864 for gcf -->
+    <TctEccEntry ecid="22000001" ecc_type="2" />
+    <!-- Task 9049040; Defect 8956930 -->
+    <TctEccEntry ecid="33704002" ecc_type="3" />
+    <TctEccEntry ecid="13704002" ecc_type="3" />
+    <TctEccEntry ecid="33706003" ecc_type="3" />
+    <TctEccEntry ecid="13706003" ecc_type="3" />
+    <!-- Task 9049040;task 8956203 -->
+    <!-- For Latam Mexico 060 066 is not ecc ,but sim card's write 060 066 as ecc. So we need custom 060 066 is not ecc. -->
+    <TctEccEntry ecid="13334020" ecc_type="1" ecc_number="066,060" />
+    <TctEccEntry ecid="33334020" ecc_type="1" ecc_number="066,060" />
+    <TctEccEntry ecid="13334140" ecc_type="1" ecc_number="066,060" />
+    <TctEccEntry ecid="33334140" ecc_type="1" ecc_number="066,060" />
+    <TctEccEntry ecid="13334070" ecc_type="1" ecc_number="066,060" />
+    <TctEccEntry ecid="33334070" ecc_type="1" ecc_number="066,060" />
+    <TctEccEntry ecid="13334030" ecc_type="1" ecc_number="066,060" />
+    <TctEccEntry ecid="33334030" ecc_type="1" ecc_number="066,060" />
+    <!-- Defect 8842366 8842283 -->
+    <TctEccEntry ecid="13364039" ecc_type="0" ecc_number="919" />
+    <TctEccEntry ecid="33364039" ecc_type="0" ecc_number="919" />
+    <TctEccEntry ecid="13364049" ecc_type="0" ecc_number="919" />
+    <TctEccEntry ecid="33364049" ecc_type="0" ecc_number="919" />
+    <!-- FR 8621602 -->
+    <TctEccEntry numeric="311480" ecc_type="0" ecc_number="*272911" />
+    <!-- Defect 8464043 8599207 -->
+    <TctEccEntry numeric="26006" ecc_type="1" ecc_number="911" />
+    <TctEccEntry numeric="53001" ecc_type="1" ecc_number="911" />
+    <!-- Task 8676093 -->
+    <TctEccEntry numeric="364FFF" ecc_type="1" ecc_number="112" />
+    <TctEccEntry numeric="71201" ecc_type="1" ecc_number="112" />
+    <TctEccEntry numeric="71202" ecc_type="1" ecc_number="112" />
+    <!-- Defect 8842294 -->
+    <TctEccEntry numeric="732101" ecc_type="1" ecc_number="123" />
+    <!-- Defect 8959303 -->
+    <TctEccEntry numeric="36801" ecc_type="1" ecc_number="104,105,106" />
+    <!-- Defect: 8221962 For Common FR: 7313228 -->
+    <!-- For Belgium(206) , Germany(262), Italy (222), Netherlands (204), Portugal(268),Sweden(240) 118 is not emergency number -->
+    <TctEccEntry numeric="206FFF" ecc_type="1" ecc_number="118" />
+    <TctEccEntry numeric="262FFF" ecc_type="1" ecc_number="118" />
+    <TctEccEntry numeric="222FFF" ecc_type="1" ecc_number="08,118,119,999" />
+    <TctEccEntry numeric="268FFF" ecc_type="1" ecc_number="118" />
+    <TctEccEntry numeric="240FFF" ecc_type="1" ecc_number="118" />
+    <!-- Defect-9203555 -->
+    <TctEccEntry numeric="708001" ecc_type="2" />
+    <TctEccEntry numeric="70801" ecc_type="2" />
+    <TctEccEntry numeric="70401" ecc_type="2" />
+    <TctEccEntry numeric="71073" ecc_type="2" />
+</TctEccEntry>

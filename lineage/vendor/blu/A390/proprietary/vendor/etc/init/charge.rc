@@ -1,0 +1,22 @@
+on init_charge
+    mkdir /productinfo 0771 system system
+    mount ext4 /dev/block/platform/soc/soc:ap-ahb/20600000.sdio/by-name/prodnv /productinfo
+    chown system system /productinfo
+    chmod 0771 /productinfo
+
+on early-init
+    start ueventd
+
+on charger
+    class_start charger
+
+service ueventd /sbin/ueventd
+    class core
+    critical
+    seclabel u:r:ueventd:s0
+    shutdown critical
+
+service charge /vendor/bin/charge
+    class charger
+    user root
+    oneshot

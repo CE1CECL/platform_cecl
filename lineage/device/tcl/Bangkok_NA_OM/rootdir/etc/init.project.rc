@@ -1,0 +1,143 @@
+# MTK project .rc configure
+
+import init.mt6765.usb.rc
+
+on early-init
+    write /proc/ppm/policy/ut_fix_core_num "4 4"
+    write /proc/ppm/policy/ut_fix_freq_idx "0 0"
+
+on init
+    mkdir /mnt/media_rw/usbotg 0700 media_rw media_rw
+    mkdir /storage/usbotg 0700 root root
+
+on post-fs
+    #DO NOT mount oempersist via fstab, since GSI don't have the mount point.
+    mount ext4 /dev/block/bootdevice/by-name/oempersist /oempersist noatime nosuid nodev commit=1
+
+    chown system system /oempersist
+    mkdir /oempersist/tct_call_data 0770 system system
+    #set xxx5 so that radio group can read it.
+    mkdir /oempersist/apn_info 0775 system system
+
+
+on post-fs-data
+
+#Camera
+    chmod 0660 /dev/MAINAF
+    chown system camera /dev/MAINAF
+
+    chmod 0660 /dev/MAINAF2
+    chown system camera /dev/MAINAF2
+
+    chmod 0660 /dev/SUBAF
+    chown system camera /dev/SUBAF
+
+    chmod 0660 /dev/GAF001AF
+    chown system camera /dev/GAF001AF
+
+    chmod 0660 /dev/DW9714AF
+    chown system camera /dev/DW9714AF
+
+    chmod 0660 /dev/LC898212AF
+    chown system camera /dev/LC898212AF
+
+    chmod 0660 /dev/BU64745GWZAF
+    chown system camera /dev/BU64745GWZAF
+
+#SMB
+    chown system system /proc/smb/ScreenComm
+    chmod 0660 /proc/smb/ScreenComm
+
+    chmod 0660 /dev/spm
+    chown system system /dev/spm
+    load_version_props
+
+    # Begin added by bitao.xiong for task-10075354 on 2020-10-16
+    #EM
+    chmod 664 /sys/bus/platform/devices/mt6357-gauge/FG_daemon_disable
+    chown root radio /sys/bus/platform/devices/mt6357-gauge/FG_daemon_disable
+    chmod 664 /sys/bus/platform/devices/mt6357-gauge/disable_nafg
+    chown root radio /sys/bus/platform/devices/mt6357-gauge/disable_nafg
+    # End added by bitao.xiong for task-10075354 on 2020-10-16
+
+on init
+    # Refer to http://source.android.com/devices/tech/storage/index.html
+    # It said, "Starting in Android 4.4, multiple external storage devices are surfaced to developers through
+    #           Context.getExternalFilesDirs(), Context.getExternalCacheDirs(), and Context.getObbDirs().
+    #           External storage devices surfaced through these APIs must be a semi-permanent part of the device (such as an SD card slot in a battery compartment).
+    #           Developers expect data stored in these locations to be available over long periods of time."
+    # Therefore, if the target doesn't support sd hot-plugging (Ex: the SD card slot in a battery compartment), we need to export SECONDARY_STORAGE in 'boot' section
+    #
+    # export SECONDARY_STORAGE /storage/sdcard1
+
+service fuse_usbotg /system/bin/sdcard -u 1023 -g 1023 -w 1023 -d /mnt/media_rw/usbotg /storage/usbotg
+    class late_start
+    disabled
+
+service spm_script /vendor/bin/spm_loader
+    user system
+    group system
+    class core
+    oneshot
+
+# start remosaic_daemon
+on property:sys.boot_completed=1
+    start remosaic_daemon
+    # [TCTOPTIMIZE] Added by dingpengzheng for 9150427 @{
+    write /dev/memcg/system/memory.swappiness 150
+    write /dev/memcg/apps/memory.swappiness 150
+    write /dev/memcg/memory.swappiness 150
+    write /sys/module/vmscan/parameters/scan_file_threshold 50
+    write /proc/sys/vm/swappiness 150
+    write /proc/ppm/policy/ut_fix_core_num "-1 -1"
+    write /proc/ppm/policy/ut_fix_freq_idx "-1 -1"
+    # [TCTOPTIMIZE] @}
+
+on post-fs-data
+    write /proc/sys/vm/direct_swappiness 40
+
+service remosaic_daemon /vendor/bin/remosaic_daemon
+    class core
+    user system
+    group system
+    oneshot
+    disabled
+
+#[TCTOPTIMIZE]added by fan.yang for bikio parameter @{
+on property:ro.vendor.iocgrp.config=1
+    #init blkio
+    mkdir /dev/blkio
+    mount cgroup none /dev/blkio blkio
+    mkdir /dev/blkio/background
+
+    write /dev/blkio/blkio.weight 1000
+    write /dev/blkio/background/blkio.weight 100
+
+    chown root system /dev/blkio
+    chown root system /dev/blkio/tasks
+    chown root system /dev/blkio/blkio.weight
+    chown root system /dev/blkio/background
+    chown root system /dev/blkio/background/tasks
+    chown root system /dev/blkio/background/blkio.weight
+#[TCTOPTIMIZE] @}
+
+#Task-10146943 add-begin shangpeng.su@tcl.com 2020.11.16
+on property:vendor.a2dp.reduce.rf.sar=0 && property:sys.rf.sar.status=1
+    exec - root shell -- /vendor/bin/iwpriv_system wlan0 driver "set_pwr_ctrl Sar_PwrOffset 2"
+
+on property:vendor.a2dp.reduce.rf.sar=1
+    exec - root shell -- /vendor/bin/iwpriv_system wlan0 driver "set_pwr_ctrl Sar_PwrOffset 1"
+#Task-10146943 add-end shangpeng.su@tcl.com 2020.11.16
+
+#BEGIN add by wang.zhou for defect-10277858
+on boot
+    chown system system /sys/class/stpgps/stpgps/sargps_state
+    start gps_sarserver
+
+service gps_sarserver /system/bin/gps_sarserver
+    disabled
+    user root
+    group root system
+    socket gps_to_sarapp seqpacket 066 system system
+    seclabel u:r:gps_sarserver:s0
+#END add by wang.zhou for defect-10277858

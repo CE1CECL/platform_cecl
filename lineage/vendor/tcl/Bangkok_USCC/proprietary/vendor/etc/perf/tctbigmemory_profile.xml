@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<tctbigmemory-profile>
+    <configuration>
+        <item key="drop_pagecache_rate" value="75"/>
+        <item key="max_kill_proc_count" value="5"/>
+        <item key="dummy_uss_kb" value="20480"/>
+        <item key="cached_mem_factor" value="0"/>
+        <item key="max_kill_memory_kb" value="102400"/>
+    </configuration>
+    <white-list>
+        <item match="prefix" pkgname="com.tct"/>
+        <item match="prefix" pkgname="com.google.android"/>
+        <item match="suffix" pkgname="dialer"/>
+        <item match="suffix" pkgname="contacts"/>
+        <item match="suffix" pkgname="messaging"/>
+    </white-list>
+    <memory-quota>
+        <item pkgname="com.eg.android.AlipayGphone" uom="mb">250</item>
+        <item pkgname="com.tencent.mm" uom="mb">300</item>
+        <item pkgname="com.facebook.katana" uom="mb">200</item>
+        <item pkgname="com.google.android.gm" uom="mb">250</item>
+    </memory-quota>
+</tctbigmemory-profile>

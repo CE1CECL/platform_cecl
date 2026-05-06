@@ -1,0 +1,12 @@
+#Added by zhijiao.li for task 9521862(FCM device manifest customization) on 2020-07-20
+on property:ro.boot.multisim=1
+    setprop persist.radio.multisim.config ss
+    setprop persist.vendor.radio.msimmode ss
+
+on property:ro.boot.multisim=3
+    setprop persist.radio.multisim.config dsds
+    setprop persist.vendor.radio.msimmode dsds
+
+on boot && property:ro.boot.code=*
+    mount ext4 /oem/etc/${ro.boot.code}/permissions /oem/etc/permissions bind
+

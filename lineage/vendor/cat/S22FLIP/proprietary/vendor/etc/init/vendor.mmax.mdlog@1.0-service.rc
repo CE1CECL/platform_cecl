@@ -1,0 +1,10 @@
+on boot
+    mkdir /data/vendor/mdlog 0777 system system
+    chmod 0777 /data/vendor/mdlog
+    mkdir /data/vendor/mdlog_cfg 0777 system system
+    chmod 0777 /data/vendor/mdlog_cfg
+
+service mdlog_server  /vendor/bin/vendor.mmax.mdlog@1.0-service
+    class hal
+    user system
+    group system
