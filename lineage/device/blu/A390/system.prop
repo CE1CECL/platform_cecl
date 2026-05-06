@@ -1,0 +1,83 @@
+# Media
+media.settings.xml = vendor/etc/media_profiles_turnkey.xml
+
+# Radio
+ril.sim.phone_ex.start=true
+ro.radio.flavor=oversea
+
+# Wi-Fi
+ro.wifi.channels=
+ro.wifi.softap.maxstanum=10
+
+# Miscellaneous
+blu.display.resolution = 480 x 800
+blu.display.size = 4.0
+blu.spec.2G=850/900/1800/1900
+blu.spec.3G=850/1900/2100
+blu.spec.battery=External
+blu.spec.battery.capacity=1300mAh
+blu.spec.bluetooth = 4.2
+blu.spec.camera.front=2MP
+blu.spec.camera.front.default=2MP
+blu.spec.camera.rear=5MP
+blu.spec.camera.rear.default=5MP
+blu.spec.cdma =
+blu.spec.chipset=7731e
+blu.spec.chipset.info=1.3Ghz Quad Core
+blu.spec.ram=512MB
+blu.spec.rom=16GB
+blu.spec.simslots=2
+blu.spec.volte = NO
+blu.spec.wifi.2.4 = 2.4 GHz
+dalvik.vm.stack-trace-dir=/data/anr
+dalvik.vm.systemservercompilerfilter=speed-profile
+net.bt.name=Android
+persist.recents.sprd=0
+persist.sys.cam.battery.flash=15
+persist.sys.cam.beauty.fullfuc=false
+persist.sys.cam.facebeauty.corp=2
+persist.sys.cam.filter.highfps=true
+persist.sys.cam.gps=true
+persist.sys.cam.sfv.alter=true
+persist.sys.dalvik.vm.lib.2=libart.so
+persist.sys.phone.brand=BLU
+persist.sys.phone.model=Advance L5
+persist.sys.sdcardfs=force_on
+persist.wifi.func.hidessid=true
+ro.audio_tunning.nr=1
+ro.audioprofile.vibrate=0
+ro.boot.hardware.sku=A390
+ro.build.custom_int_version = BLU_A390_V8.1.G.04.19_GENERIC_20210805
+ro.build.custom_version = BLU_A390_V8.1.G.04.19_GENERIC_05-08-2021_1522
+ro.build.hw.version=PCB02
+ro.build.real.version=BLU_A390_V8.1.G.04.19_GENERIC_20210805
+ro.build.version.platform=eng.20210805.161018
+ro.camera.maker=BLU
+ro.camera.model=Advance L5
+ro.com.google.acsa=true
+ro.customer.version=BLU_A390_V8.1.G.04.19_GENERIC_05-08-2021_1522
+ro.default.volume.general=5_5_5_5_5_5
+ro.device.support.gps=0
+ro.device.support.gsensor=1
+ro.device.support.lsensor=false
+ro.device.support.msensor=0
+ro.device.support.psensor=1
+ro.expect.recovery_id=0xa6cd115cf650369e9251725ec66a7495b554d7ab000000000000000000000000
+ro.fm.chip.port.UART.androidm=false
+ro.fota.version.display=BLU_A390_V8.1.G.04.19_GENERIC_05-08-2021_1522
+ro.frp.pst=/dev/block/platform/soc/soc:ap-ahb/20600000.sdio/by-name/persist
+ro.keybox.id.value=BLU_A390
+ro.location.gnss=disabled
+ro.lockwallpaper.enable=false
+ro.phone.shutdown.time=0
+ro.product.assistanttouch=false
+ro.product.bluetooth.name=Advance L5
+ro.product.cpu.abi2=armeabi
+ro.product.hardware=sc7731e_fs280_32v4_v1.1.0
+ro.product.mtp.name=Advance L5
+ro.product.usb.name=Advance L5
+ro.product.wifi.name=Advance L5
+ro.sys.sdcardfs=true
+service.wait_for_bootanim = 1
+sys.hardware.version=SC7731e_2_IRD_K_V1.1.0
+

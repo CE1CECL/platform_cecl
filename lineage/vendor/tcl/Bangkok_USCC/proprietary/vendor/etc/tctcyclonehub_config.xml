@@ -1,0 +1,102 @@
+<!--
+    Module: The configuration file used for CycloneHub V2.0
+    Date:   Sep. 11, 2019
+    Author: dingpengzheng@tcl.com
+    Note:   This configuration file can actually be used for previous
+            version of CycloneHub, except the tag started with <config>.
+            Feel free to adjust the value to fit your device, but proceed
+            with caution when you wish to add/rename/remove tags.
+-->
+<tctperf_config>
+    <!--
+    Sleep Mode:The profile that will be used when screen off
+    Value:  tag <cpusets> contains the value that represents the core
+            number of each cgroup, value greater than the actual core
+            number of the CPU is allowed, but not recommended, as it may
+            cause confusion when re-used by succeeding projects.
+            Currently cutomization on the core id is not supported, and
+            its necessarity will be evaluated (and implemented if needed)
+            in CycloneHub V3.
+    -->
+    <profile name="sleep">
+        <cpusets>
+            <item group="background">00001111</item>
+            <item group="system-background">00001111</item>
+            <item group="foreground">000011110</item>
+            <item group="top-app">00001111</item>
+            <item group="restricted">00001111</item>
+        </cpusets>
+        <blkio>
+            <item group="foreground">500</item>
+            <item group="background">1000</item>
+        </blkio>
+    </profile>
+    <!--
+    Normal Mode:The profile that will be used when screen on
+    (This will be also used as a 'Game Mode' when device is in low-power state)
+    Value:  See Normal Mode
+    -->
+    <profile name="normal">
+        <cpusets>
+            <item group="background">00001111</item>
+            <item group="system-background">00001111</item>
+            <item group="foreground">01111000</item>
+            <item group="top-app">11111111</item>
+            <item group="restricted">00000111</item>
+        </cpusets>
+        <blkio>
+            <item group="foreground">1000</item>
+            <item group="background">500</item>
+        </blkio>
+    </profile>
+    <!--
+    Game Mode:The profile that will be used when game is at the top
+    (This mode will not be enabled when device is in low-power state, see Normal Mode)
+    Value:  See Normal Mode
+    -->
+    <profile name="game">
+        <cpusets>
+            <item group="background">00000011</item>
+            <item group="system-background">00001111</item>
+            <item group="foreground">01111110</item>
+            <item group="top-app">11111111</item>
+            <item group="restricted">00000001</item>
+        </cpusets>
+        <blkio>
+            <item group="foreground">1000</item>
+            <item group="background">200</item>
+        </blkio>
+    </profile>
+    <!--
+    Powersave Mode:The profile that will be used when screen on with low-power state
+    (This mode will not be enabled when device is running games, see Normal Mode)
+    Value:  See Normal Mode
+    -->
+    <profile name="powersave">
+        <cpusets>
+            <item group="background">00001111</item>
+            <item group="system-background">00001111</item>
+            <item group="foreground">11111111</item>
+            <item group="top-app">11111111</item>
+            <item group="restricted">00001111</item>
+        </cpusets>
+        <blkio>
+            <item group="foreground">1000</item>
+            <item group="background">100</item>
+        </blkio>
+    </profile>
+    <config>
+        <!-- Trigger to compact memory 10min after entering doze
+        Value:  ms(Millisecond)
+        -->
+        <item key="ms_compact_memory_after_screen_off">600000</item>
+        <item key="ms_boost_for_screen_rotate">1500</item>
+    </config>
+    <subproc-suppress>
+        <app packageName="com.tencent.mm" duration="7000"/>
+    </subproc-suppress>
+    <schedboost-proc>
+        <item packageName="com.google.android.gm" fgboost="15" taboost="30" duration="-1" />
+        <item packageName="com.google.android.apps.messaging" fgboost="15" taboost="30" duration="-1" />
+    </schedboost-proc>
+</tctperf_config>

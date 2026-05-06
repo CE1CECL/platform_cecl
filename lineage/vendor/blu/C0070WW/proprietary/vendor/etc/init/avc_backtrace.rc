@@ -1,0 +1,6 @@
+on property:persist.vendor.avc.backtrace.enabled=1
+   write /sys/fs/selinux/backtrace_enable "1"
+   write /sys/fs/selinux/backtrace_filter "all"
+
+on property:persist.vendor.avc.backtrace.enabled=0
+   write /sys/fs/selinux/backtrace_enable "0"

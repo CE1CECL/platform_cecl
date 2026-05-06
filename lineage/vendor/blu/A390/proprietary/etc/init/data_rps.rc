@@ -1,0 +1,10 @@
+service rps_on /system/bin/data_rps.sh on
+    user root
+    disabled
+    oneshot
+
+service rps_off /system/bin/data_rps.sh off
+    user root
+    disabled
+    oneshot
+

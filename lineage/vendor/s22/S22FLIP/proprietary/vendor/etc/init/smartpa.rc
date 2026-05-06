@@ -1,0 +1,19 @@
+service smartpa /vendor/bin/smartpa
+    class core
+    user root
+    group root
+    seclabel u:r:smartpa:s0
+    oneshot
+
+on property:persist.sys.mmi.smartpa.enabled=1
+    start smartpa
+
+on property:persist.vendor.mmi.smartpa.completed=1
+    setprop persist.sys.mmi.smartpa.completed 1
+
+on property:persist.vendor.mmi.smartpa.completed=0
+    setprop persist.sys.mmi.smartpa.completed 0
+
+
+
+

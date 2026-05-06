@@ -1,0 +1,18 @@
+{
+    "YUVHDR": {
+        "REAR_MAIN_1": {
+            "HFS_MIDDLE_THRESHOLD": 0.006,
+            "HFS_SELECT_COUNT": 4,
+            "HFS_OVER_EXPOSE_AREA": 0.1,
+            "HFS_UNDER_EXPOSE_AREA": 0.12,
+            "HGD_THRESHOLD_FIRST": 0.0,
+            "HGD_THRESHOLD_SECOND": 0.0,
+            "HF_BLEND_MASK_RATIO": 0.15,
+            "HF_SATURATION_RATIO": 0.05,
+            "HF_POST_BRIGHT_RATIO": 0.0,
+            "HTM_MAKE_ENHANCE": false,
+            "HTM_MAKE_BRIGHTEN": 0.0,
+            "HTM_MAKE_GAMMA_CURVE": true
+        }
+    }
+}

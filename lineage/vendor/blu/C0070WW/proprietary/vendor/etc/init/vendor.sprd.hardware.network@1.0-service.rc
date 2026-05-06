@@ -1,0 +1,4 @@
+service vendor.network-hal-1-0-sprd /vendor/bin/hw/vendor.sprd.hardware.network@1.0-service
+    class hal
+    user system
+    group system

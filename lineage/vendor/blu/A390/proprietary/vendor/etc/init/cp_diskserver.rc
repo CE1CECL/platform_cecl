@@ -1,0 +1,13 @@
+#cp_diskserver
+service cp_diskserver /vendor/bin/cp_diskserver
+    class cali
+    user root
+    group root
+    disabled
+
+
+on property:ro.bootmode=cali
+   start cp_diskserver
+
+on property:ro.bootmode=factorytest
+   start cp_diskserver

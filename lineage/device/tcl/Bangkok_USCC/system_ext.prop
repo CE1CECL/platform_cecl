@@ -1,0 +1,9 @@
+# Radio
+persist.vendor.radio.rtt.operval=1
+persist.vendor.radio.rtt.operval1=1
+
+# Miscellaneous
+ro.signal.strength.upper.limit=-44
+ro.sys.singleshifttables=1
+ro.wifi_hotspot2.support=true
+

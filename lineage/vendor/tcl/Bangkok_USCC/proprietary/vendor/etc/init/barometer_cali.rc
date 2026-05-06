@@ -1,0 +1,7 @@
+
+service barometer_cali /vendor/bin/barometer_cali
+    user system
+    group system
+    class core
+    oneshot
+    

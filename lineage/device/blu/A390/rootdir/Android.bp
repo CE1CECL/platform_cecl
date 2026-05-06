@@ -1,0 +1,19 @@
+//
+// SPDX-FileCopyrightText: The LineageOS Project
+// SPDX-License-Identifier: Apache-2.0
+//
+
+// Init scripts
+sh_binary {
+    name: "zram.sh",
+    src: "bin/zram.sh",
+    vendor: true,
+}
+
+// Init configuration files
+// fstab
+prebuilt_etc {
+    name: "fstab.sp7731e_fs280_32v4",
+    src: "etc/fstab.sp7731e_fs280_32v4",
+    vendor: true,
+}

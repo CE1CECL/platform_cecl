@@ -1,0 +1,4 @@
+<?xml version='1.0' encoding='utf-8' standalone='yes' ?>
+<app_powersave_config>
+<package name="com.digitalturbine.blubar" optimize="1" alarm="0" wakelock="0" network="0" autolaunch="2" secondarylaunch="2" lockscreencleanup="2" consumertype="0" exemptsource="0" />
+</app_powersave_config>

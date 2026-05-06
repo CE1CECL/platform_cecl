@@ -1,0 +1,33 @@
+import /vendor/etc/init/hw/init.common.rc
+
+# added for certification models
+on property:ro.oem.tw.cmodel=WF11018
+    setprop ro.boot.hardware.sku WF11018
+on property:ro.oem.tw.cmodel=WF11026
+    setprop ro.boot.hardware.sku WF11026
+on property:ro.oem.tw.cmodel=WF11026V
+    setprop ro.boot.hardware.sku WF11026V
+
+service atfwd /vendor/bin/ATFWD-daemon
+    class late_start
+    user system
+    group system radio
+
+on post-fs-data
+    #
+    # Make modem config folder and copy firmware config to that folder
+    #
+    service qcom-radio-sh  /vendor/bin/init.qcom.radio.sh
+    class late_start
+    group root shell system radio
+    user root
+    oneshot
+
+on property:persist.radio.atfwd.start=false
+    stop atfwd
+
+on property:radio.atfwd.start=false
+    stop atfwd
+
+on property:sys.boot_completed=1
+    start atfwd
