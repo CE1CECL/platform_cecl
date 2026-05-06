@@ -1,0 +1,10 @@
+service power-hal-1-0 /vendor/bin/hw/vendor.mediatek.hardware.mtkpower@1.0-service
+    class hal
+    capabilities NET_ADMIN
+    user system
+    #[TCTOPTIMIZE] Added by fan.yang for task 9871846 @{
+    priority -2
+    ioprio be 2
+    # writepid /dev/cpuset/foreground/tasks
+    #[TCTOPTIMIZE] @}
+    group system readproc wifi media media_rw camera audio

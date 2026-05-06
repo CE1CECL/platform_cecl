@@ -1,0 +1,6 @@
+on post-fs
+    insmod ${ro.vendor.ko.mount.point}/socko/stk8baxx.ko
+
+on factorytest
+    insmod ${ro.vendor.ko.mount.point}/socko/stk8baxx.ko
+

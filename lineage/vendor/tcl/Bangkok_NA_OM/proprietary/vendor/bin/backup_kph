@@ -1,0 +1,39 @@
+#!/vendor/bin/sh
+
+MC_REGISTRY_DATA_FILE="/data/vendor/mcRegistry/00000000.authtokcont"
+MC_REGISTRY_DATA_BACKUP_PATH="/mnt/vendor/persist/backup/"
+MC_REGISTRY_DATA_BACKUP_FILE="/mnt/vendor/persist/backup/00000000.authtokcont"
+
+MC_BACKUP_DIR_MOD="771"
+MC_BACKUP_FILE_MOD="660"
+MC_BACKUP_OWN="system:system"
+MC_BACKUP_CON="u:object_r:mobicore_data_file:s0"
+
+
+##DO NOT mkdir backup-dir in init.*.rc
+if [ ! -d "$MC_REGISTRY_DATA_BACKUP_PATH" ]; then 
+	mkdir "$MC_REGISTRY_DATA_BACKUP_PATH"
+	chmod "$MC_BACKUP_DIR_MOD" "$MC_REGISTRY_DATA_BACKUP_PATH"
+	chown "$MC_BACKUP_OWN" "$MC_REGISTRY_DATA_BACKUP_PATH"
+	chcon "$MC_BACKUP_CON" "$MC_REGISTRY_DATA_BACKUP_PATH"
+	if [ ! -d "$MC_REGISTRY_DATA_BACKUP_PATH" ]; then 
+		exit 0
+	fi
+fi
+
+##For factory procedure, we maybe need write KPH many times.
+#if [ -f "$MC_REGISTRY_DATA_FILE" ] && [ ! -f "$MC_REGISTRY_DATA_BACKUP_FILE" ]; then
+##So copy it everytime.
+if [ -f "$MC_REGISTRY_DATA_FILE" ]; then
+	cp -f "$MC_REGISTRY_DATA_FILE" "$MC_REGISTRY_DATA_BACKUP_FILE"
+	chmod "$MC_BACKUP_FILE_MOD" "$MC_REGISTRY_DATA_BACKUP_FILE"
+	chown "$MC_BACKUP_OWN" "$MC_REGISTRY_DATA_BACKUP_FILE"
+	chcon "$MC_BACKUP_CON" "$MC_REGISTRY_DATA_BACKUP_FILE"
+fi
+
+if [ ! -f "$MC_REGISTRY_DATA_BACKUP_FILE" ]; then
+	exit 0
+fi
+
+exit 1
+

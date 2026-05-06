@@ -1,0 +1,4 @@
+service jlinkmmi-hidl-1-0 /vendor/bin/hw/vendor.mediatek.hardware.jlinkmmi@1.0-service
+    class hal
+    user system
+    group system root usb

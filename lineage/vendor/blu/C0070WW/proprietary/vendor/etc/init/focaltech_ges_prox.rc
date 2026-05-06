@@ -1,0 +1,6 @@
+on post-fs
+    insmod ${ro.vendor.ko.mount.point}/odmko/focaltech_ges_prox.ko
+
+on factorytest
+    insmod ${ro.vendor.ko.mount.point}/odmko/focaltech_ges_prox.ko
+

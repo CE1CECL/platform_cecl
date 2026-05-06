@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8' standalone='yes' ?>
+<exceptions>
+    <!-- Watchface -->
+    <exception package="com.mobvoi.wear.watchface.aw">
+        <permission name="com.google.android.wearable.permission.RECEIVE_COMPLICATION_DATA" fixed="false" />
+    </exception>
+</exceptions>

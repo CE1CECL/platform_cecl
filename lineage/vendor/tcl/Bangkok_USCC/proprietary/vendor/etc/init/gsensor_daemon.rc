@@ -1,0 +1,10 @@
+
+on property:dev.bootcomplete=1
+     start gsensor_daemon
+
+service gsensor_daemon /vendor/bin/gsensor_daemon
+     #disabled
+     #class late_start
+     user root
+     group system
+     oneshot

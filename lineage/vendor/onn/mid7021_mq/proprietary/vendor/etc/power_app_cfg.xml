@@ -1,0 +1,242 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- The source code provided herein is for optimizing power and performance of gaming software
+and certain applications (e.g. Sina Weibo, QQ) only and should not be used and/or included in
+any software that is unrelated to enhancing end-user experience. -->
+<WHITELIST>
+    <Package name="cn.wsds.gamemaster">
+        <Activity name="Common">
+            <FPS value="Common">
+                <data cmd="PERF_RES_NET_NETD_BOOST_UID" param1="2"></data>
+            </FPS>
+        </Activity>
+    </Package>
+    <Package name="com.tencent.tmgp.sgame">
+        <Activity name="Common">
+            <FPS value="Common">
+                <data cmd="PERF_RES_POWERHAL_WHITELIST_APP_LAUNCH_TIME_COLD" param1="25000"></data>
+                <data cmd="PERF_RES_FPS_FBT_FLOOR_BOUND" param1="1"></data>
+                <data cmd="PERF_RES_FPS_FBT_KMIN" param1="10"></data>
+                <data cmd="PERF_RES_THERMAL_POLICY" param1="8"></data>
+                <data cmd="PERF_RES_DRAM_CM_MGR" param1="1"></data>
+                <data cmd="PERF_RES_NET_NETD_BOOST_UID" param1="1"></data>
+                <data cmd="PERF_RES_NET_MD_WEAK_SIG_OPT" param1="1"></data>
+            </FPS>
+        </Activity>
+    </Package>
+    <Package name="my.beautyCamera">
+        <Activity name="Common">
+            <FPS value="Common">
+                <data cmd="PERF_RES_THERMAL_POLICY" param1="8"></data>
+            </FPS>
+        </Activity>
+    </Package>
+    <Package name="com.tencent.mobileqq">
+        <Activity name="Common">
+            <FPS value="Common">
+                <data cmd="PERF_RES_THERMAL_POLICY" param1="8"></data>
+            </FPS>
+        </Activity>
+    </Package>
+    <Package name="air.tv.douyu.android">
+        <Activity name="Common">
+            <FPS value="Common">
+                <data cmd="PERF_RES_THERMAL_POLICY" param1="8"></data>
+                <data cmd="PERF_RES_DRAM_CM_MGR" param1="1"></data>
+            </FPS>
+        </Activity>
+    </Package>
+    <Package name="com.meitu.makeup">
+        <Activity name="Common">
+            <FPS value="Common">
+                <data cmd="PERF_RES_THERMAL_POLICY" param1="8"></data>
+            </FPS>
+        </Activity>
+    </Package>
+    <Package name="com.netease.ko">
+        <Activity name="Common">
+            <FPS value="Common">
+                <data cmd="PERF_RES_THERMAL_POLICY" param1="8"></data>
+            </FPS>
+        </Activity>
+    </Package>
+    <Package name="com.netease.hyxd">
+        <Activity name="Common">
+            <FPS value="Common">
+                <data cmd="PERF_RES_THERMAL_POLICY" param1="8"></data>
+                <data cmd="PERF_RES_DRAM_CM_MGR" param1="1"></data>
+            </FPS>
+        </Activity>
+    </Package>
+    <Package name="com.maimiao.live.tv">
+        <Activity name="Common">
+            <FPS value="Common">
+                <data cmd="PERF_RES_THERMAL_POLICY" param1="8"></data>
+            </FPS>
+        </Activity>
+    </Package>
+    <Package name="com.tencent.tmgp.ak">
+        <Activity name="Common">
+            <FPS value="Common">
+                <data cmd="PERF_RES_DRAM_CM_MGR" param1="1"></data>
+            </FPS>
+        </Activity>
+    </Package>
+    <Package name="com.ak.mi">
+        <Activity name="Common">
+            <FPS value="Common">
+                <data cmd="PERF_RES_DRAM_CM_MGR" param1="1"></data>
+            </FPS>
+        </Activity>
+    </Package>
+    <Package name="com.tencent.tmgp.cf">
+        <Activity name="Common">
+            <FPS value="Common">
+                <data cmd="PERF_RES_DRAM_CM_MGR" param1="1"></data>
+            </FPS>
+        </Activity>
+    </Package>
+    <Package name="com.tencent.cldts">
+        <Activity name="Common">
+            <FPS value="Common">
+                <data cmd="PERF_RES_DRAM_CM_MGR" param1="1"></data>
+            </FPS>
+        </Activity>
+    </Package>
+    <Package name="com.netease.zjz">
+        <Activity name="Common">
+            <FPS value="Common">
+                <data cmd="PERF_RES_DRAM_CM_MGR" param1="1"></data>
+            </FPS>
+        </Activity>
+    </Package>
+    <Package name="com.tencent.tmgp.clfz">
+        <Activity name="Common">
+            <FPS value="Common">
+                <data cmd="PERF_RES_DRAM_CM_MGR" param1="1"></data>
+            </FPS>
+        </Activity>
+    </Package>
+    <Package name="com.tencent.tmgp.pubgmhd">
+        <Activity name="Common">
+            <FPS value="Common">
+                <data cmd="PERF_RES_DRAM_CM_MGR" param1="1"></data>
+                <data cmd="PERF_RES_NET_NETD_BOOST_UID" param1="1"></data>
+                <data cmd="PERF_RES_NET_MD_WEAK_SIG_OPT" param1="1"></data>
+            </FPS>
+        </Activity>
+    </Package>
+    <Package name="com.tencent.tmgp.pubgm">
+        <Activity name="Common">
+            <FPS value="Common">
+                <data cmd="PERF_RES_DRAM_CM_MGR" param1="1"></data>
+            </FPS>
+        </Activity>
+    </Package>
+    <Package name="com.vectorunit.red">
+        <Activity name="Common">
+            <FPS value="Common">
+                <data cmd="PERF_RES_FPS_FSTB_FPS_LOWER" param1="60"></data>
+                <data cmd="PERF_RES_FPS_FSTB_FPS_UPPER" param1="60"></data>
+            </FPS>
+        </Activity>
+    </Package>
+    <Package name="com.estrongs.android.pop.pro">
+        <Activity name="Common">
+            <FPS value="Common">
+                <data cmd="PERF_RES_FPS_FBT_BHR_OPP" param1="15"></data>
+                <data cmd="PERF_RES_DRAM_OPP_MIN" param1="0"></data>
+            </FPS>
+        </Activity>
+    </Package>
+    <Package name="com.futuremark.pcmark.android.benchmark">
+        <Activity name="Common">
+            <FPS value="Common">
+                <data cmd="PERF_RES_CPUFREQ_MIN_CLUSTER_1" param1="3000000"></data>
+                <data cmd="PERF_RES_CPUFREQ_MIN_CLUSTER_0" param1="3000000"></data>
+                <data cmd="PERF_RES_DRAM_OPP_MIN" param1="0"></data>
+                <data cmd="PERF_RES_GPU_FREQ_MIN" param1="0"></data>
+                <data cmd="PERF_RES_SCHED_BOOST" param1="1"></data>
+            </FPS>
+        </Activity>
+    </Package>
+    <Package name="com.andromeda.androbench2">
+        <Activity name="Common">
+            <FPS value="Common">
+                <data cmd="PERF_RES_CPUFREQ_MIN_CLUSTER_1" param1="3000000"></data>
+                <data cmd="PERF_RES_CPUFREQ_MIN_CLUSTER_0" param1="3000000"></data>
+                <data cmd="PERF_RES_DRAM_OPP_MIN" param1="0"></data>
+                <data cmd="PERF_RES_GPU_FREQ_MIN" param1="0"></data>
+                <data cmd="PERF_RES_SCHED_BOOST" param1="1"></data>
+            </FPS>
+        </Activity>
+    </Package>
+    <Package name="com.antutu.ABenchMark">
+        <Activity name="Common">
+            <FPS value="Common">
+                <data cmd="PERF_RES_CPUFREQ_MIN_CLUSTER_1" param1="3000000"></data>
+                <data cmd="PERF_RES_CPUFREQ_MIN_CLUSTER_0" param1="3000000"></data>
+                <data cmd="PERF_RES_DRAM_OPP_MIN" param1="0"></data>
+                <data cmd="PERF_RES_GPU_FREQ_MIN" param1="0"></data>
+                <data cmd="PERF_RES_SCHED_BOOST" param1="1"></data>
+            </FPS>
+        </Activity>
+    </Package>
+    <Package name="com.antutu.benchmark.full.lite">
+        <Activity name="Common">
+            <FPS value="Common">
+                <data cmd="PERF_RES_CPUFREQ_MIN_CLUSTER_1" param1="3000000"></data>
+                <data cmd="PERF_RES_CPUFREQ_MIN_CLUSTER_0" param1="3000000"></data>
+                <data cmd="PERF_RES_DRAM_OPP_MIN" param1="0"></data>
+                <data cmd="PERF_RES_GPU_FREQ_MIN" param1="0"></data>
+                <data cmd="PERF_RES_SCHED_BOOST" param1="1"></data>
+            </FPS>
+        </Activity>
+    </Package>
+    <Package name="com.glbenchmark.glbenchmark27">
+        <Activity name="Common">
+            <FPS value="Common">
+                <data cmd="PERF_RES_CPUFREQ_MIN_CLUSTER_1" param1="3000000"></data>
+                <data cmd="PERF_RES_CPUFREQ_MIN_CLUSTER_0" param1="3000000"></data>
+                <data cmd="PERF_RES_DRAM_OPP_MIN" param1="0"></data>
+                <data cmd="PERF_RES_GPU_FREQ_MIN" param1="0"></data>
+                <data cmd="PERF_RES_SCHED_BOOST" param1="1"></data>
+            </FPS>
+        </Activity>
+    </Package>
+    <!-- wangyuting add for app.feelsy at 2022/11/21 -->
+    <Package name="app.feelsy">
+        <Activity name="Common">
+            <FPS value="Common">
+                <data cmd="PERF_RES_GPU_FREQ_MIN" param1="0"></data>
+                <data cmd="PERF_RES_POWERHAL_WHITELIST_APP_LAUNCH_TIME_COLD" param1="25000"></data>
+                <data cmd="PERF_RES_DRAM_OPP_MIN" param1="1"></data>
+                <data cmd="PERF_RES_NET_NETD_BOOST_UID" param1="1"></data>
+                <data cmd="PERF_RES_NET_MD_WEAK_SIG_OPT" param1="1"></data>
+            </FPS>
+        </Activity>
+    </Package>
+    <!-- dongwei.lv add for TFBAAA-2022 at 2022/11/22 -->
+    <Package name="com.google.android.gms">
+        <Activity name="com.google.android.gms.accountsettings.mg.ui.main.MainActivity">
+            <FPS value="Common">
+                <data cmd="PERF_RES_CPUFREQ_MIN_CLUSTER_1" param1="3000000"></data>
+                <data cmd="PERF_RES_CPUFREQ_MIN_CLUSTER_0" param1="3000000"></data>
+                <data cmd="PERF_RES_DRAM_OPP_MIN" param1="0"></data>
+                <data cmd="PERF_RES_GPU_FREQ_MIN" param1="0"></data>
+                <data cmd="PERF_RES_SCHED_BOOST" param1="1"></data>
+            </FPS>
+        </Activity>
+    </Package>
+<Package name="com.google.android.setupwizard">
+        <Activity name="Common">
+            <FPS value="Common">
+                <data cmd="PERF_RES_CPUFREQ_MIN_CLUSTER_1" param1="3000000"></data>
+                <data cmd="PERF_RES_CPUFREQ_MIN_CLUSTER_0" param1="3000000"></data>
+                <data cmd="PERF_RES_DRAM_OPP_MIN" param1="0"></data>
+                <data cmd="PERF_RES_GPU_FREQ_MIN" param1="0"></data>
+                <data cmd="PERF_RES_SCHED_BOOST" param1="1"></data>
+            </FPS>
+        </Activity>
+    </Package>
+
+</WHITELIST>
